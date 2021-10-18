@@ -1,5 +1,7 @@
 package spring.di;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -28,5 +30,12 @@ public class Program {
 		
 		ExamConsole console = context.getBean(ExamConsole.class);
 		 console.print();
+		 
+		 List<Exam> exams = (List<Exam>) context.getBean("exams");
+		 //exams.add(new NewlecExam(10,10,10,10));
+		 for (Exam example : exams)
+		 {
+			 System.out.println(example.toString());
+		 }
 	}
 }

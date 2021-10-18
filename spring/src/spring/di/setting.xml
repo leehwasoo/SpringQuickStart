@@ -16,4 +16,13 @@
 	<property name="exam" ref="exam"/>
 </bean>
 
+<bean id="exams" class="java.util.ArrayList">
+	<constructor-arg>
+		<list>
+			<bean class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" p:math="10" p:com="10"/>
+			<ref bean="exam"/>
+		</list>
+	</constructor-arg>
+</bean>
+
 </beans>
