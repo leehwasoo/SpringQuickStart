@@ -31,11 +31,10 @@ public class Program {
 		ExamConsole console = context.getBean(ExamConsole.class);
 		 console.print();
 		 
-		 List<Exam> exams = (List<Exam>) context.getBean("exams");
-		 //exams.add(new NewlecExam(10,10,10,10));
-		 for (Exam example : exams)
-		 {
-			 System.out.println(example.toString());
-		 }
+			/*
+			 * List<Exam> exams = (List<Exam>) context.getBean("exams"); //exams.add(new
+			 * NewlecExam(10,10,10,10)); for (Exam example : exams) {
+			 * System.out.println(example.toString()); }
+			 */
 	}
 }
