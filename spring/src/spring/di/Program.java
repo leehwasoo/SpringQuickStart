@@ -1,5 +1,8 @@
 package spring.di;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import spring.di.entity.Exam;
 import spring.di.entity.NewlecExam;
 import spring.di.ui.ExamConsole;
@@ -11,8 +14,16 @@ public class Program {
 		//Exam exam = new NewlecExam();
 		
 		//ExamConsole console = new InlineExamConsole(exam);
-		ExamConsole console = new GridExamConsole();
+		/*스프링에게 시하는 방식으로 코드작성
+		 ExamConsole console = new GridExamConsole();
 		//console.setExam(exam);
-		console.print();
+		console.print();*/
+		
+		ApplicationContext context = 
+				new ClassPathXmlApplicationContext("spring/di/setting.xml");
+		
+		 //ExamConsole console = (ExamConsole) context.getBean("console");
+		ExamConsole console = context.getBean(ExamConsole.class);
+		 console.print();
 	}
 }
