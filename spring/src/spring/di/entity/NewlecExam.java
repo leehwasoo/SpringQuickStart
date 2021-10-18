@@ -7,6 +7,17 @@ public class NewlecExam implements Exam {
 	private int eng;
 	private int com;
 	
+	public NewlecExam() {
+		
+	}
+	
+	public NewlecExam(int kor, int math, int eng, int com) {
+		this.kor = kor;
+		this.math = math;
+		this.eng = eng;
+		this.com = com;
+	}
+
 	public int getKor() {
 		return kor;
 	}
