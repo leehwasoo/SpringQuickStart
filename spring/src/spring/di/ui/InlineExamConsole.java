@@ -7,10 +7,13 @@ import spring.di.entity.Exam;
 
 public class InlineExamConsole implements ExamConsole {
 
+	@Autowired(required = false)
+	@Qualifier("exam2") // 기본생성자를 호출하며 생성된다
 	private Exam exam;
 	
 	public InlineExamConsole() {
 		// TODO Auto-generated constructor stub
+		System.out.println("default constructor");
 	}
 	
 	public InlineExamConsole(Exam exam) {
@@ -25,10 +28,6 @@ public class InlineExamConsole implements ExamConsole {
 		System.out.printf("total:%d, avg:%f", exam.total(), exam.avg());
 	}
 
-
-
-	@Autowired
-	@Qualifier("exam2")
 	@Override
 	public void setExam(Exam exam) {
 		this.exam = exam;		
