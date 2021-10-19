@@ -6,19 +6,18 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-
-<context:annotation-config/>
-<bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10"/>
-<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="30"/>
+<context:component-scan base-package="spring.di.ui, spring.di.entity"/>
+<!-- <bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10"/>
+<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="30"/> -->
 <!--  <bean id="exam" class="spring.di.entity.NewlecExam">
 	<constructor-arg index="0" value="10"/>
 	<constructor-arg index="1" value="10"/>
 	<constructor-arg index="2" value="10"/>
 	<constructor-arg index="3" value="10"/>
 </bean> -->
-<bean id="console" class="spring.di.ui.InlineExamConsole">
-	<!-- <property name="exam" ref="exam"/> -->
-</bean>
+<!-- <bean id="console" class="spring.di.ui.InlineExamConsole">
+	<property name="exam" ref="exam"/>
+</bean> -->
 
 <!-- <bean id="exams" class="java.util.ArrayList">
 	<constructor-arg>
