@@ -23,7 +23,7 @@ public class Program {
 				new ClassPathXmlApplicationContext("spring/aop/setting.xml");
 		
 		
-		Exam examProxy = (Exam) context.getBean("proxy");
+		Exam examProxy = (Exam) context.getBean("examProxy");
 		
 		System.out.printf("total is %d\n", examProxy.total());
 		System.out.printf("total is %f\n", examProxy.avg());
