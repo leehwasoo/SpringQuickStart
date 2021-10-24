@@ -8,15 +8,19 @@
 
 <!-- <context:component-scan base-package="spring.di.ui, spring.di.entity"/> -->
 
-<bean id="target" class="spring.aop.entity.NewlecExam" p:kor="10" p:eng="10" p:math="10" p:com="10"/>
+<bean id="target" class="spring.aop.entity.NewlecExam" p:kor="101" p:eng="10" p:math="10" p:com="10"/>
 <bean id="logAroundAdvice" class="spring.aop.advice.LogAroundAdvice"/>
 <bean id="logBeforedvice" class="spring.aop.advice.LogBeforeAdvice"/>
+<bean id="logAfterReturningdvice" class="spring.aop.advice.LogAfterReturningdvice"/>
+<bean id="logAfterThrowingdvice" class="spring.aop.advice.LogAfterThrowingdvice"/>
 <bean id="examProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
 	<property name="target" ref="target"/>
 	<property name="interceptorNames">
 		<list>
 			<value>logAroundAdvice</value>
 			<value>logBeforedvice</value>
+			<value>logAfterReturningdvice</value>
+			<value>logAfterThrowingdvice</value>
 		</list>
 	</property>
 </bean>
