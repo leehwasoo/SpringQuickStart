@@ -26,7 +26,7 @@ public class Program {
 		Exam examProxy = (Exam) context.getBean("examProxy");
 		
 		System.out.printf("total is %d\n", examProxy.total());
-		System.out.printf("total is %f\n", examProxy.avg());
+		System.out.printf("avg is %f\n", examProxy.avg());
 		
 		/*
 		 * ExamConsole console = (ExamConsole) context.getBean("console");

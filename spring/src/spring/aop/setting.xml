@@ -14,13 +14,27 @@
 <bean id="logAfterReturningdvice" class="spring.aop.advice.LogAfterReturningdvice"/>
 <bean id="logAfterThrowingdvice" class="spring.aop.advice.LogAfterThrowingdvice"/>
 
-<bean id="classicPointCut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+<!-- <bean id="classicPointCut" class="org.springframework.aop.support.NameMatchMethodPointcut">
 	<property name="mappedName" value="total"/>
 </bean>
 
 <bean id="classicBeforeAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
 	<property name="advice" ref="logBeforeAdvice"/>
 	<property name="pointcut" ref="classicPointCut"/>
+</bean> -->
+
+<bean id="classicBeforeAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+	<property name="advice" ref="logBeforeAdvice"/>
+	<property name="mappedNames">
+		<list>
+			<value>.*to.*</value>
+		</list>
+	</property>
+</bean>
+
+<bean id="classicAfterAdvisor" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+	<property name="advice" ref="logBeforeAdvice"/>
+	<property name="mappedName" value="total"/>
 </bean>
 
 <bean id="examProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
