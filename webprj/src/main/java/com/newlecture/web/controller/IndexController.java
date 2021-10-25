@@ -12,12 +12,13 @@ public class IndexController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		ModelAndView view = new ModelAndView();
+		ModelAndView mv = new ModelAndView();
 		
-		view.addObject("data", "hello spring mvc~");
-		view.setViewName("index.jsp");
+		mv.addObject("data", "hello spring mvc~");
+		mv.setViewName("/WEB-INF/view/index.jsp");
+		//mv.setViewName("WEB-INF/view/index.jsp");
 		
-		return view;
+		return mv;
 	}
 
 }
