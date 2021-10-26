@@ -11,10 +11,12 @@
         <!-- collaborators and configuration for this bean go here -->
     </bean>
     
+    <bean id="/notice/list" class="com.newlecture.web.controller.notice.ListController"/> 
+    
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     	<property name="prefix" value="/WEB-INF/view/"/>
     	<property name="suffix" value=".jsp"/>
-    </bean>
+    </bean> 
     
     <mvc:resources location="/static/" mapping="/**"></mvc:resources>
 </beans>
