@@ -13,9 +13,9 @@ import java.util.List;
 import com.newlecture.web.entity.Notice;
 
 public class NoticeService {
-	private String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
-	private String uid = "NEWLEC";
-	private String pwd = "11111";
+	private String url = "jdbc:oracle:thin:@localhost:1521/orcl";
+	private String uid = "c##leehs";
+	private String pwd = "1234";
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	
 	public List<Notice> getList(int page, String field, String query) throws ClassNotFoundException, SQLException{
@@ -23,7 +23,7 @@ public class NoticeService {
 		int start = 1 + (page-1)*10;     // 1, 11, 21, 31, ..
 		int end = 10*page; // 10, 20, 30, 40...
 		
-		String sql = "SELECT * FROM NOTICE_VIEW WHERE "+field+" LIKE ? AND NUM BETWEEN ? AND ?";	
+		String sql = "SELECT * FROM NOTICE WHERE "+field+" LIKE ? AND ID BETWEEN ? AND ?";	
 		
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url,uid, pwd);
@@ -93,8 +93,7 @@ public class NoticeService {
 		String writerId = notice.getWriterId();
 		String content = notice.getContent();
 		String files = notice.getFiles();
-		
-		String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
+	
 		String sql = "INSERT INTO notice (    " + 
 				"    title," + 
 				"    writer_id," + 
