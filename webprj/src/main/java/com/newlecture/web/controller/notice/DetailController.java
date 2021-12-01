@@ -1,19 +1,24 @@
 package com.newlecture.web.controller.notice;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-public class DetailController implements Controller {
+@Controller
+public class DetailController{
 
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ModelAndView mv = new ModelAndView("notice.detail");
+	
+	@RequestMapping("/detail")
+	public void request()
+	{
 		
-		mv.addObject("data", "hello spring mvc~");
-		return mv;
 	}
+	/*
+	 * @Override public ModelAndView handleRequest(HttpServletRequest request,
+	 * HttpServletResponse response) throws Exception { ModelAndView mv = new
+	 * ModelAndView("notice.detail");
+	 * 
+	 * mv.addObject("data", "hello spring mvc~"); return mv; }
+	 */
 
 }

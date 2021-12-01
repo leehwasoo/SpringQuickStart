@@ -1,33 +1,33 @@
 package com.newlecture.web.controller.notice;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.newlecture.web.entity.Notice;
 import com.newlecture.web.service.NoticeService;
-import com.newlecture.web.service.jdbc.JDBCNoticeService;
 
-public class ListController implements Controller {
+@Controller
+public class ListController{
 
 	@Autowired
 	private NoticeService noticeService;
 	
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
-		ModelAndView mv = new ModelAndView("notice.list");
+	@RequestMapping("/list")
+	public void request() 
+	{
 		
-		List<Notice> list= noticeService.getList(1, "title", "");
-		mv.addObject("list", list);
-		//mv.setViewName("/WEB-INF/view/notice/index.jsp");
-		
-		return mv;
 	}
+	
+	/*
+	 * @Override public ModelAndView handleRequest(HttpServletRequest request,
+	 * HttpServletResponse response) throws Exception { // TODO Auto-generated
+	 * method stub ModelAndView mv = new ModelAndView("notice.list");
+	 * 
+	 * List<Notice> list= noticeService.getList(1, "title", "");
+	 * mv.addObject("list", list);
+	 * //mv.setViewName("/WEB-INF/view/notice/index.jsp");
+	 * 
+	 * return mv; }
+	 */
 
 }
