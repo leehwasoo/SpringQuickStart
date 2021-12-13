@@ -7,15 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.newlecture.web.service.NoticeService;
 
 @Controller
-public class ListController{
+public class NoticeController{
 
 	@Autowired
 	private NoticeService noticeService;
 	
 	@RequestMapping("/list")
-	public void request() 
+	public String list() 
 	{
-		
+		return "notice.list";
+	}
+	
+	@RequestMapping("/detail")
+	public String detail()
+	{
+		return "notice.list";
 	}
 	
 	/*

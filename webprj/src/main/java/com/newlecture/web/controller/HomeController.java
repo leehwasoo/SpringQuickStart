@@ -4,14 +4,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class IndexController{
+public class HomeController{
 	
 	@RequestMapping("/index")
-	public void request()
+	public String index()
+	{
+		return "root.index";
+	}
+	
+	@RequestMapping("/help")
+	public void help()
 	{
 		
 	}
-	
 	/*
 	 * @Override public ModelAndView handleRequest(HttpServletRequest request,
 	 * HttpServletResponse response) throws Exception { // TODO Auto-generated
